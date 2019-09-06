@@ -1,5 +1,7 @@
 FROM alpine:latest
-
+#替换源
+RUN echo "http://mirrors.aliyun.com/alpine/latest-stable/main/" > /etc/apk/repositories && \
+    echo "http://mirrors.aliyun.com/alpine/latest-stable/community/" >> /etc/apk/repositories
 RUN apk update
 RUN apk add php7 nginx
 RUN apk add curl bash
